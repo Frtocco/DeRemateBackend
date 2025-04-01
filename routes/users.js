@@ -20,13 +20,18 @@ userRouter.get('/:id', async (req, res) => {
 });
 
 userRouter.post('/', async (req, res) => {
-    const result = await validateUser(req.body);
-    if(result.error) {
-        res.status(422).json({message: result.error.message});
-        return;
-    }
-    const newUser = await UserModel.create(req.body); 
-    res.status(201).json(newUser); 
+    try{    
+        const result = await validateUser(req.body);
+        if(result.error) {
+            res.status(422).json({message: result.error.message});
+            return;
+        }
+
+        const newUser = await UserModel.create(req.body); 
+        res.status(201).json(newUser);
+    } catch(error) {
+        res.status(400).json({message: error.message});
+    } 
 });
 
 userRouter.delete('/:id', async (req, res) => {
@@ -39,13 +44,33 @@ userRouter.delete('/:id', async (req, res) => {
     }
 });
 
-// Actualizar un usuario por ID
+
 userRouter.patch('/:id', async (req, res) => {
     const { id } = req.params;
-    const updatedUser = await UserModel.update(id, req.body); // Usar req.body para los datos a actualizar
+    const updatedUser = await UserModel.update(id, req.body); 
     if (updatedUser) {
         res.status(200).json(updatedUser);
     } else {
         res.status(404).json({ message: 'User not found' });
+    }
+});
+
+userRouter.post('/login', async (req, res) => {
+    try {
+        const result = await validatePartialUser(req.body);
+        
+        if (result.error) {
+            return res.status(422).json({ message: result.error.message });
+        }
+
+        const user = await UserModel.authenticate(req.body);
+        if (user) {
+            return res.json({ message: 'Login successful', user });
+        } 
+
+        return res.status(401).json({ message: 'Invalid credentials' });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Internal Server Error' });
     }
 });

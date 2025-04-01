@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../utils.js'
+import bcrypt from 'bcrypt';
 
 const usersFilePath = './users.json'
 let users = readJSON(usersFilePath)
@@ -14,10 +15,22 @@ export class UserModel {
   }
 
   static async create(input) {
+    
+    const emailExists = users.some(user => user.email === input.email);
+    const userExists = users.some(user => user.username!== input.username)
+    
+    if (emailExists || userExists) {
+        throw new Error('Credentials already in use');
+    }
+    
+    const hashedPassword = await bcrypt.hash(input.password, 10);
+
     const newUser = {
       id: randomUUID().toString(),
-      ...input
+      ...input,
+      password: hashedPassword,
     }
+    
     users.push(newUser)
     writeJSON(usersFilePath, users)
     return newUser
@@ -42,4 +55,21 @@ export class UserModel {
     }
     return false
   }
+
+  static async authenticate(input) {
+    const user = users.find(user => user.email === input.email);
+    
+    if (!user){ 
+      return null; 
+    }
+    
+    const passwordMatch = await bcrypt.compare(input.password, user.password);
+    
+    if(passwordMatch !== undefined){
+      return user;
+    }
+    
+    return null;
+}
+
 }
