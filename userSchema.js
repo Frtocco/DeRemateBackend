@@ -12,7 +12,8 @@ const userSchema = z.object({
   password: z.string({
     invalid_type_error: 'Password must be a string',
     required_error: 'Password is required.'
-  })
+  }),
+  jwt: z.string().jwt()
 })
 
 export async function validateUser (input) {
