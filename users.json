@@ -1,3 +1,9 @@
 [
-    
+{
+    "userId": "1",
+    "username": "Frtocco",
+    "email": "frtocco@uade.edu.ar",
+    "password": "123456",
+    "jwt": "asd"
+}  
 ]

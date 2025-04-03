@@ -6,6 +6,7 @@ export const userRouter = Router();
 
 userRouter.get('/', async (req, res) => {
     const users = await UserModel.getAll();
+    console.log('Pegaron en la API')
     res.json(users);
 })
 
