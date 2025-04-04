@@ -1,6 +1,10 @@
 import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../utils.js'
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken'
+
+const JWT_SECRET = 'clave_secreta'
+
 
 const usersFilePath = './users.json'
 let users = readJSON(usersFilePath)
@@ -15,26 +19,32 @@ export class UserModel {
   }
 
   static async create(input) {
-    
     const emailExists = users.some(user => user.email === input.email);
-    const userExists = users.some(user => user.username!== input.username)
-    
+    const userExists = users.some(user => user.username === input.username);
+
     if (emailExists || userExists) {
         throw new Error('Credentials already in use');
     }
-    
+
     const hashedPassword = await bcrypt.hash(input.password, 10);
+    const id = randomUUID().toString();
+
+    const token = jwt.sign(
+      { id, username: input.username, email: input.email },
+      JWT_SECRET
+    );
 
     const newUser = {
-      id: randomUUID().toString(),
+      id,
       ...input,
       password: hashedPassword,
-    }
-    
-    users.push(newUser)
-    writeJSON(usersFilePath, users)
-    return newUser
-  }
+      jwt: token
+    };
+
+    users.push(newUser);
+    writeJSON(usersFilePath, users);
+    return newUser;
+}
 
   static async delete(id) {
     const index = users.findIndex(user => user.id === id)

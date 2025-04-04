@@ -19,7 +19,7 @@ userRouter.get('/:id', async (req, res) => {
         res.status(404).json({ message: 'User not found' });
     }
 });
-
+// Register
 userRouter.post('/', async (req, res) => {
     try{    
         const result = await validateUser(req.body);
@@ -34,7 +34,7 @@ userRouter.post('/', async (req, res) => {
         res.status(400).json({message: error.message});
     } 
 });
-
+// Delete user by id
 userRouter.delete('/:id', async (req, res) => {
     const { id } = req.params;
     const deletedUser = await UserModel.delete(id);
@@ -45,7 +45,7 @@ userRouter.delete('/:id', async (req, res) => {
     }
 });
 
-
+// Edit user by id
 userRouter.patch('/:id', async (req, res) => {
     const { id } = req.params;
     const updatedUser = await UserModel.update(id, req.body); 
@@ -55,7 +55,7 @@ userRouter.patch('/:id', async (req, res) => {
         res.status(404).json({ message: 'User not found' });
     }
 });
-
+// Login 
 userRouter.post('/login', async (req, res) => {
     try {
         const result = await validatePartialUser(req.body);
@@ -66,7 +66,7 @@ userRouter.post('/login', async (req, res) => {
 
         const user = await UserModel.authenticate(req.body);
         if (user) {
-            return res.json({ message: 'Login successful', user });
+            return res.status(200);
         } 
 
         return res.status(401).json({ message: 'Invalid credentials' });

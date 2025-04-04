@@ -1,9 +1,16 @@
 [
-{
+  {
     "userId": "1",
     "username": "Frtocco",
     "email": "frtocco@uade.edu.ar",
     "password": "123456",
     "jwt": "asd"
-}  
+  },
+  {
+    "id": "75c06db1-ba4b-4605-81ea-4d2d65e32d61",
+    "email": "asd@gmail.com",
+    "password": "$2b$10$Gyc.DMkw18EzH6Ez.bNJvOlmyEneSLj4tNymKkGhapR0niC7ximVO",
+    "username": "asdasd",
+    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1YzA2ZGIxLWJhNGItNDYwNS04MWVhLTRkMmQ2NWUzMmQ2MSIsInVzZXJuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhc2RAZ21haWwuY29tIiwiaWF0IjoxNzQzNzc3Nzk4fQ.qLijqX6YaYHSrGxW18Ho2VrcdOeK_Dir5KxcOMV_-t4"
+  }
 ]
