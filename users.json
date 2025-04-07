@@ -12,5 +12,12 @@
     "password": "$2b$10$Gyc.DMkw18EzH6Ez.bNJvOlmyEneSLj4tNymKkGhapR0niC7ximVO",
     "username": "asdasd",
     "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1YzA2ZGIxLWJhNGItNDYwNS04MWVhLTRkMmQ2NWUzMmQ2MSIsInVzZXJuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhc2RAZ21haWwuY29tIiwiaWF0IjoxNzQzNzc3Nzk4fQ.qLijqX6YaYHSrGxW18Ho2VrcdOeK_Dir5KxcOMV_-t4"
+  },
+  {
+    "id": "cd23ba25-1f38-4e86-9358-963e3ed5bfab",
+    "email": "admin@gmail.com",
+    "password": "$2b$10$IzwF9aGvsYvjY/rwbKFD2u08fLQHGwqRKI3uEDLS7DPiUkuQ4nfqm",
+    "username": "Frtocco1",
+    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMjNiYTI1LTFmMzgtNGU4Ni05MzU4LTk2M2UzZWQ1YmZhYiIsInVzZXJuYW1lIjoiRnJ0b2NjbzEiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTc0MzgwMzg3OH0.oWg8NI7maTeQAoQ1x_8JtgYpbB9zUwDfG3Qa-XDb0Ls"
   }
 ]

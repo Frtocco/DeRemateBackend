@@ -64,8 +64,8 @@ userRouter.post('/login', async (req, res) => {
             return res.status(422).json({ message: result.error.message });
         }
 
-        const user = await UserModel.authenticate(req.body);
-        if (user) {
+        const credentialsMatch = await UserModel.authenticate(req.body);
+        if (credentialsMatch) {
             return res.status(200);
         } 
 

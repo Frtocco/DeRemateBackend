@@ -67,19 +67,20 @@ export class UserModel {
   }
 
   static async authenticate(input) {
-    const user = users.find(user => user.email === input.email);
+    
+    const user = users.find(user => user.username === input.username);
     
     if (!user){ 
-      return null; 
+      return false; 
     }
     
     const passwordMatch = await bcrypt.compare(input.password, user.password);
-    
-    if(passwordMatch !== undefined){
-      return user;
+    console.log("User " + input.username + " login attempt was " + passwordMatch)
+    if(passwordMatch){
+      return true;
     }
     
-    return null;
+    return false;
 }
 
 }
