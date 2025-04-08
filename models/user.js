@@ -75,10 +75,25 @@ export class UserModel {
     }
     
     const passwordMatch = await bcrypt.compare(input.password, user.password);
+    
     console.log("User " + input.username + " login attempt was " + passwordMatch)
-    if(passwordMatch){
-      return true;
-    }
+    
+    if (passwordMatch) {
+      const tokenPayload = {
+          id: user.id,
+          username: user.username
+      };
+
+      const token = jwt.sign(tokenPayload, JWT_SECRET);
+      
+      const safeUser = {
+        token: token,
+        username: input.username,
+        id: input.id
+      }
+      
+      return {safeUser};
+  }
     
     return false;
 }

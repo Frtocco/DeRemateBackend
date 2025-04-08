@@ -58,16 +58,22 @@ userRouter.patch('/:id', async (req, res) => {
 // Login 
 userRouter.post('/login', async (req, res) => {
     try {
+
         const result = await validatePartialUser(req.body);
-        
+   
         if (result.error) {
             return res.status(422).json({ message: result.error.message });
         }
 
-        const credentialsMatch = await UserModel.authenticate(req.body);
-        if (credentialsMatch) {
-            return res.status(200);
-        } 
+        const authResult = await UserModel.authenticate(req.body);
+
+        if (authResult) {
+            return res.status(200).json({
+                message: 'Login successful',
+                token: authResult.token,
+                user: authResult.user
+            });
+        }
 
         return res.status(401).json({ message: 'Invalid credentials' });
     } catch (error) {
