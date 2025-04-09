@@ -28,8 +28,8 @@ userRouter.post('/', async (req, res) => {
             return;
         }
 
-        const newUser = await UserModel.create(req.body); 
-        res.status(201).json(newUser);
+        const token = await UserModel.create(req.body); 
+        res.status(201).json(token);
     } catch(error) {
         res.status(400).json({message: error.message});
     } 
@@ -55,6 +55,24 @@ userRouter.patch('/:id', async (req, res) => {
         res.status(404).json({ message: 'User not found' });
     }
 });
+// check JWT
+userRouter.post('/jwt', async (req, res) => {
+    const token = req.body;
+    console.log(token)
+    try {
+        const user = await UserModel.getUserFromToken(token);
+
+        if (user) {
+            return res.status(200).json(user);
+        }
+
+        return res.status(404).json({ message: 'User not found' });
+
+    } catch (error) {
+        console.error('Error al verificar token:', error.message);
+        return res.status(500).json({ message: 'Error interno del servidor' });
+    }
+});
 // Login 
 userRouter.post('/login', async (req, res) => {
     try {
@@ -68,11 +86,7 @@ userRouter.post('/login', async (req, res) => {
         const authResult = await UserModel.authenticate(req.body);
 
         if (authResult) {
-            return res.status(200).json({
-                message: 'Login successful',
-                token: authResult.token,
-                user: authResult.user
-            });
+            return res.status(200).json(authResult);
         }
 
         return res.status(401).json({ message: 'Invalid credentials' });

@@ -29,21 +29,28 @@ export class UserModel {
     const hashedPassword = await bcrypt.hash(input.password, 10);
     const id = randomUUID().toString();
 
-    const token = jwt.sign(
-      { id, username: input.username, email: input.email },
-      JWT_SECRET
-    );
-
     const newUser = {
       id,
       ...input,
-      password: hashedPassword,
-      jwt: token
+      password: hashedPassword
     };
 
     users.push(newUser);
+    
     writeJSON(usersFilePath, users);
-    return newUser;
+    
+    const tokenPayload = {
+      id: newUser.id,
+      username: newUser.username
+    }
+
+    const token = jwt.sign(tokenPayload, JWT_SECRET);
+      
+      const tokenJson = {
+        token: token
+      }
+
+    return tokenJson;
 }
 
   static async delete(id) {
@@ -86,16 +93,25 @@ export class UserModel {
 
       const token = jwt.sign(tokenPayload, JWT_SECRET);
       
-      const safeUser = {
-        token: token,
-        username: input.username,
-        id: input.id
+      const tokenJson = {
+        token: token
       }
       
-      return {safeUser};
+      return tokenJson;
   }
     
     return false;
 }
-
+  static async getUserFromToken(input){
+    const token = input.token
+    
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET);
+        return decoded;
+    } catch (error) {
+        console.error('Token inválido:', error.message);
+        return null;
+    }
+  }
+  
 }
