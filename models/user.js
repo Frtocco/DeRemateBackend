@@ -75,7 +75,7 @@ export class UserModel {
 
   static async authenticate(input) {
     
-    const user = users.find(user => user.username === input.username);
+    const user = users.find(user => user.username.toLowerCase() === input.username.toLowerCase());
     
     if (!user){ 
       return false; 
