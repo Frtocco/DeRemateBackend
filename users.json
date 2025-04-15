@@ -1,30 +1,30 @@
 [
   {
-    "userId": "1",
-    "username": "Frtocco",
-    "email": "frtocco@uade.edu.ar",
-    "password": "123456",
-    "jwt": "asd"
+    "id": "7c617efe-cc81-4ae4-9dd6-a51c22cdb9c4",
+    "isVerified": false,
+    "email": "frtocco@gmail.com",
+    "password": "$2b$10$wrxjBDmojU5m38JHW9Cpier3ah/lZ6BsxKxWG4qoFMFnPIcKQUSXq",
+    "username": "Frtocco"
   },
   {
-    "id": "75c06db1-ba4b-4605-81ea-4d2d65e32d61",
+    "id": "364b34b5-73cb-484f-a375-e4ca56d4d6ea",
+    "isVerified": false,
     "email": "asd@gmail.com",
-    "password": "$2b$10$Gyc.DMkw18EzH6Ez.bNJvOlmyEneSLj4tNymKkGhapR0niC7ximVO",
-    "username": "asdasd",
-    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1YzA2ZGIxLWJhNGItNDYwNS04MWVhLTRkMmQ2NWUzMmQ2MSIsInVzZXJuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhc2RAZ21haWwuY29tIiwiaWF0IjoxNzQzNzc3Nzk4fQ.qLijqX6YaYHSrGxW18Ho2VrcdOeK_Dir5KxcOMV_-t4"
+    "password": "$2b$10$Mqm7.YJenM/Da3fOqA9Ha.S0J3FZO7Zj7dnrh6YVUQOidXyFba76q",
+    "username": "Frtocco1"
   },
   {
-    "id": "cd23ba25-1f38-4e86-9358-963e3ed5bfab",
-    "email": "admin@gmail.com",
-    "password": "$2b$10$IzwF9aGvsYvjY/rwbKFD2u08fLQHGwqRKI3uEDLS7DPiUkuQ4nfqm",
-    "username": "Frtocco1",
-    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMjNiYTI1LTFmMzgtNGU4Ni05MzU4LTk2M2UzZWQ1YmZhYiIsInVzZXJuYW1lIjoiRnJ0b2NjbzEiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTc0MzgwMzg3OH0.oWg8NI7maTeQAoQ1x_8JtgYpbB9zUwDfG3Qa-XDb0Ls"
+    "id": "9e8c7eb9-aaaa-4c2b-900a-5110d3a4a470",
+    "isVerified": false,
+    "email": "frantocco7@gmail.com",
+    "password": "$2b$10$2Lah3MjVeFxnZKTE8cXTi.QpFZULfQVs./sGgY85LJ4jBYV8HWM5K",
+    "username": "admin21"
   },
   {
-    "id": "9b5bc679-4df3-49d7-9c81-ad55785a5c3c",
-    "email": "asdasd@gmail.com",
-    "password": "$2b$10$/R5H2KOTLY3QCeAbfsdibORTRrewlP2KBAbrwXxwZBlahFa8dRr6y",
-    "username": "Frtocco5",
-    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliNWJjNjc5LTRkZjMtNDlkNy05YzgxLWFkNTU3ODVhNWMzYyIsInVzZXJuYW1lIjoiRnJ0b2NjbzUiLCJlbWFpbCI6ImFzZGFzZEBnbWFpbC5jb20iLCJpYXQiOjE3NDQwODM5NTN9.sz-fWn2JEzeDkHihR9-jpQMiCASsylf4lGgaVH6KIBk"
+    "id": "efb79b83-3856-4524-a149-29b3ac4184a0",
+    "isVerified": false,
+    "email": "frtocco12@gmail.com",
+    "password": "$2b$10$8W2N3.tFDjF/zRrAB5EbH.SRIeWPng2YnGiSPvuRxugc.NjxfY6NS",
+    "username": "Frtocco12"
   }
 ]
