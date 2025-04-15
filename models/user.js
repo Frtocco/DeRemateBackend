@@ -31,6 +31,7 @@ export class UserModel {
 
     const newUser = {
       id,
+      isVerified: false,
       ...input,
       password: hashedPassword
     };
@@ -107,11 +108,19 @@ export class UserModel {
     
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        return decoded;
+        return this.getUserFromUsername(decoded.id)
     } catch (error) {
         console.error('Token inválido:', error.message);
         return null;
     }
   }
   
+  static async getUserFromUsername(userId){
+    const user = users.find(user => user.id.toLowerCase() === userId.toLowerCase());
+    if(!user){
+      return false
+    }
+    return user
+  }
+
 }
