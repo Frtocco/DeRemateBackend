@@ -13,6 +13,12 @@ export class OrderModel{
         return pendingOrders
     }
 
+    static async getOrdersByRider(riderId){
+        const riderOrders = orders.filter((order) => order.riderId == riderId);
+        return riderOrders
+    
+    }
+
     static async chengeStatus(orderId, newStatus, riderId){
         
         const index = orders.findIndex((order) => order.orderId == orderId);
