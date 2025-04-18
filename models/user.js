@@ -1,12 +1,12 @@
 import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../utils.js'
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 
 const JWT_SECRET = 'clave_secreta'
 
 
-const usersFilePath = './users.json'
+const usersFilePath = './json/users.json'
 let users = readJSON(usersFilePath)
 
 export class UserModel {
