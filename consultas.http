@@ -12,11 +12,18 @@ GET http://localhost:1234/orders
 ###
 GET http://localhost:1234/orders/pendings
 ###
+GET http://localhost:1234/orders/history
+Content-Type: application/json
+
+{
+  "riderId":"1"
+}
+###
 PUT http://localhost:1234/orders/1
 Content-Type: application/json
 
 {
   "status": "In Progress",
-  "riderId":"2"
+  "riderId":"1"
 }
 

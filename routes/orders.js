@@ -13,6 +13,12 @@ orderRouter.get('/pendings', async (req,res) => {
     res.json(pendingOrders)
 })
 
+orderRouter.get('/history', async(req,res)=>{
+    const { riderId } = req.body;
+    const orders = await OrderModel.getOrdersByRider(riderId)
+    res.json(orders)
+})
+
 orderRouter.put('/:orderId', async(req, res) =>{
     const { orderId } = req.params;
     const { status, riderId } = req.body;
