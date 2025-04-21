@@ -33,5 +33,12 @@
     "email": "aguscastino01@gmail.com",
     "password": "$2b$10$lOhwrCM9LplCxuaTERhi8OP.Qw7YLOMNq52pIYppVUjIflTXhq1P6",
     "username": "agus"
+  },
+  {
+    "id": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
+    "isVerified": true,
+    "email": "pedro@gmail.com",
+    "password": "$2b$10$ncq6ZJjC2fzZYOS0I6eFrelFifj40t8AwadK.q1fQGprsd89FUEmC",
+    "username": "pedro"
   }
 ]

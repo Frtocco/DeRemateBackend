@@ -12,15 +12,9 @@
     "address": "Addres Example 2"
   },
   {
-    "orderId": "2",
+    "orderId": "3",
     "riderId": "1",
     "status": "In Progress",
-    "address": "Addres Example 2"
-  },
-  {
-    "orderId": "2",
-    "riderId": "1",
-    "status": "Pending",
-    "address": "Addres Example 2"
+    "address": "Addres Example 3"
   }
 ]

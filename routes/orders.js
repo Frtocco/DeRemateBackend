@@ -14,7 +14,8 @@ orderRouter.get('/pendings', async (req,res) => {
 })
 
 orderRouter.get('/history', async(req,res)=>{
-    const { riderId } = req.body;
+    const { riderId } = req.query;
+    console.log("Consulta de historial para este rider id: ",riderId);
     const orders = await OrderModel.getOrdersByRider(riderId)
     res.json(orders)
 })
