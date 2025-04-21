@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { UserModel } from '../models/user.js';
 import {validateUser, validatePartialUser} from '../userSchema.js'
+import { sendResetEmail } from '../mailer.js'
+import { randomUUID } from 'node:crypto'
 
 export const userRouter = Router();
 
@@ -93,5 +95,45 @@ userRouter.post('/login', async (req, res) => {
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+// Forgot password (solicitar token de recuperación)
+userRouter.post('/forgot-password', async (req, res) => {
+  const { email } = req.body
+
+  const user = await UserModel.getByEmail(email)
+  if (!user) {
+    // Por seguridad, no decimos que no existe
+    return res.status(200).json({ message: 'Si el correo está registrado, recibirás un email' })
+  }
+
+  const token = randomUUID()
+  user.resetToken = token
+  user.resetTokenExpiry = Date.now() + 1000 * 60 * 10 // 10 minutos
+  writeJSON('./json/users.json', users) // guardamos el cambio
+
+  try {
+    await sendResetEmail(email, token)
+    return res.status(200).json({ message: 'Email enviado' })
+  } catch (error) {
+    console.error(error)
+    return res.status(500).json({ message: 'Error al enviar el email' })
+  }
+})
+
+// Reset password (cambiar la contraseña)
+userRouter.post('/reset-password', async (req, res) => {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+        return res.status(400).json({ message: 'Token y nueva contraseña requeridos' });
+    }
+
+    try {
+        const result = await UserModel.resetPassword(token, newPassword);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 });

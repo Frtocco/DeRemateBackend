@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="baa002fb-8494-4190-857b-f93d1877d879" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/bcrypt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/bcrypt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/bin/bcrypt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/bin/bcrypt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/umd/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/umd/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/umd/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/umd/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/umd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/umd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/umd/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcryptjs/umd/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cris" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2vT8bdUVhr1u3Km3ehLZx3Ldpv2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "confirmacionMail",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/UADE/1C2025/Desarrollo de Aplicaciones 1/TPO/DeRemateAndroid"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baa002fb-8494-4190-857b-f93d1877d879" name="Changes" comment="" />
+      <created>1744157776122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744157776122</updated>
+    </task>
+    <servers />
+  </component>
+</project>
