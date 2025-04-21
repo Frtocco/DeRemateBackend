@@ -26,5 +26,12 @@
     "email": "frtocco12@gmail.com",
     "password": "$2b$10$8W2N3.tFDjF/zRrAB5EbH.SRIeWPng2YnGiSPvuRxugc.NjxfY6NS",
     "username": "Frtocco12"
+  },
+  {
+    "id": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
+    "isVerified": true,
+    "email": "aguscastino01@gmail.com",
+    "password": "$2b$10$lOhwrCM9LplCxuaTERhi8OP.Qw7YLOMNq52pIYppVUjIflTXhq1P6",
+    "username": "agus"
   }
 ]
