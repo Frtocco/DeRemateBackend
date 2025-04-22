@@ -146,6 +146,44 @@ userRouter.post('/forgot-password', async (req, res) => {
   }
 });
 
+// Send email verification
+userRouter.post('/emailVerification', async (req, res) => {
+  console.log('pegamos en la verificacion')
+  try{
+    await UserModel.sendVerificationEmail(req.body);
+    console.log('deberia andar')
+    return res.status(200).json({ message: 'Email enviado correctamente' });
+  }catch(error){
+    console.error(error);
+    return res.status(500).json({ message: 'Error al enviar el email' });
+  }
+
+});
+//Verificar al usuario cuando clickea el link enviado
+userRouter.get('/verify/', async (req, res) => {
+  const token = req.query.token;
+
+  if (!token) {
+    return res.status(400).send('Falta el token');
+  }
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const userId = decoded.id;
+
+    const user = await getUserById(userId);
+    if (!user) {
+      return res.status(404).send('Usuario no encontrado');
+    }
+    user.isVerified = true;
+    await updateUser(userId, user);
+    return res.status(200);
+  } catch (error) {
+    console.error(error);
+    return res.status(400).send('Token inválido o expirado');
+  }
+})
+
 // Reset password
 userRouter.post('/reset-password', async (req, res) => {
   const { token, newPassword } = req.body;

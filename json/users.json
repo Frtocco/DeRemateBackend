@@ -22,7 +22,7 @@
   },
   {
     "id": "efb79b83-3856-4524-a149-29b3ac4184a0",
-    "isVerified": false,
+    "isVerified": true,
     "email": "frtocco12@gmail.com",
     "password": "$2b$10$8W2N3.tFDjF/zRrAB5EbH.SRIeWPng2YnGiSPvuRxugc.NjxfY6NS",
     "username": "Frtocco12"
@@ -49,5 +49,12 @@
     "email": "pedro@gmail.com",
     "password": "$2b$10$ncq6ZJjC2fzZYOS0I6eFrelFifj40t8AwadK.q1fQGprsd89FUEmC",
     "username": "pedro"
+  },
+  {
+    "id": "be6a52e6-3dfd-4d32-aa03-b1ac2ddad3f3",
+    "isVerified": false,
+    "email": "frantocco@gmail.com",
+    "password": "$2b$10$ajekMBRD1Yd113GrshhE7uRzb891RmaNuzm9iOi8YVsQ0sXNmVwyi",
+    "username": "Frtocco212"
   }
 ]

@@ -2,9 +2,9 @@ import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../utils.js'
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
+import { sendVerificationEmail } from '../mailer.js';
 
 const JWT_SECRET = 'clave_secreta'
-
 
 const usersFilePath = './json/users.json'
 let users = readJSON(usersFilePath)
@@ -159,7 +159,10 @@ export class UserModel {
     return users.find(user => user.email === email)
   }
 
-
-
-
-}
+  static async sendVerificationEmail(input) {
+    console.log(input.email)
+    console.log(input.id)
+    const verificationToken = jwt.sign({id: input.id}, JWT_SECRET, {expiresIn: '24h'});
+    sendVerificationEmail(input.email, verificationToken)
+  }
+} 

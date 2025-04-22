@@ -8,9 +8,25 @@ export const transporter = nodemailer.createTransport({
   }
 });
 
+export const sendVerificationEmail = async (to, token) => {
+  const verificationLink = `http://localhost:1234/users/verify?token=${token}`
+
+  console.log(verificationLink)
+
+  const mailBody = {
+    from: 'deremate764@gmail.com',
+    to,
+    subject: 'Verificar email - DeRemate',
+    text: `Hola! Para restablecer tu contraseña, hacé click en este enlace: ${verificationLink}`,
+    html: `<p>Hola!</p><p>Para verifica tu email, hacé click en el siguiente enlace:</p><a href="${verificationLink}">${verificationLink}</a>`
+  }
+
+  await transporter.sendMail(mailBody)
+
+}
+
 export const sendResetEmail = async (to, token) => {
   const resetLink = `https://29c4-170-239-171-153.ngrok-free.app/reset-password?token=${token}`
-
 
   const mailOptions = {
     from: 'deremate764@gmail.com',
