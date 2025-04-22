@@ -33,8 +33,8 @@
     "email": "KIMCRIS00817@gmail.com",
     "password": "$2b$10$4/U1ow2IlwVMKePtKYsWEOkYs7dVhOQ4lLbTJO7mITRwFnav7BK5C",
     "username": "avocado",
-    "resetToken": "2d8874de-ad8a-42e6-8b2d-4523c6db740a",
-    "resetTokenExpiry": 1745291656997
+    "resetToken": "8b776783-da88-4f00-8399-438deefc76b2",
+    "resetTokenExpiry": 1745328198962
   },
   {
     "id": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
@@ -49,5 +49,19 @@
     "email": "pedro@gmail.com",
     "password": "$2b$10$ncq6ZJjC2fzZYOS0I6eFrelFifj40t8AwadK.q1fQGprsd89FUEmC",
     "username": "pedro"
+  },
+  {
+    "id": "08ccc0f6-8629-442d-9798-c5bbf314ca02",
+    "isVerified": false,
+    "email": "deremate764@gmail.com",
+    "password": "$2b$10$tkwKjhHKAHnHtNJ52JmAAOMF6ylR/yl76SaOUJ7e2fpAE.umBbA2e",
+    "username": "avocadoadmin"
+  },
+  {
+    "id": "3105b5f4-0e95-474d-b6cb-693a4e0c17e7",
+    "isVerified": false,
+    "email": "frtocco24@gmail.com",
+    "password": "$2b$10$XEK7NeaBGbuMbnnPpgmw0u6F3L9K/aTsnEQAq58rcuiNj8rkUhif.",
+    "username": "Frtocco24"
   }
 ]
