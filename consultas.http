@@ -1,5 +1,24 @@
 GET http://localhost:1234/users
 
+###
 GET http://localhost:1234/users/dcdd0fad-a94c-4810-8acc-5f108d3b18c1
 
+###
 DELETE http://localhost:1234/users/dcdd0fad-a94c-4810-8acc-5f108d3b18c1
+
+###
+GET http://localhost:1234/orders
+
+###
+GET http://localhost:1234/orders/pendings
+###
+GET http://localhost:1234/orders/history?riderId=c7501d98-ef08-47ec-8e59-c4e9ae110eda
+###
+PUT http://localhost:1234/orders/1
+Content-Type: application/json
+
+{
+  "status": "In Progress",
+  "riderId":"1"
+}
+
