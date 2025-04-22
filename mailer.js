@@ -9,7 +9,7 @@ export const transporter = nodemailer.createTransport({
 });
 
 export const sendResetEmail = async (to, token) => {
-  const resetLink = `https://1993-2800-810-4b2-86b1-f91d-3536-9289-b2b.ngrok-free.app`
+  const resetLink = `https://29c4-170-239-171-153.ngrok-free.app/reset-password?token=${token}`
 
 
   const mailOptions = {
