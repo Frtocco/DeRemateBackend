@@ -123,4 +123,43 @@ export class UserModel {
     return user
   }
 
+  static async requestPasswordReset(email) {
+    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+    if (!user) {
+      throw new Error('No existe un usuario con ese correo');
+    }
+
+    const resetToken = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '15m' });
+
+    return { resetToken, message: 'Token de recuperación generado con éxito' };
+  }
+
+  static async resetPassword(token, newPassword) {
+    try {
+      const decoded = jwt.verify(token, JWT_SECRET);
+      const userId = decoded.id;
+
+      const user = users.find(u => u.id === userId);
+      if (!user) {
+        throw new Error('Usuario no encontrado');
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+      user.password = hashedPassword;
+
+      writeJSON(usersFilePath, users);
+      return { message: 'Contraseña actualizada con éxito' };
+    } catch (err) {
+      throw new Error('Token inválido o expirado');
+    }
+  }
+
+  static async getByEmail(email) {
+    return users.find(user => user.email === email)
+  }
+
+
+
+
 }

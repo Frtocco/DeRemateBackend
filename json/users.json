@@ -28,6 +28,15 @@
     "username": "Frtocco12"
   },
   {
+    "id": "4ebf5c39-7e71-4e6f-98c7-3aafa37b9171",
+    "isVerified": true,
+    "email": "KIMCRIS00817@gmail.com",
+    "password": "$2b$10$4/U1ow2IlwVMKePtKYsWEOkYs7dVhOQ4lLbTJO7mITRwFnav7BK5C",
+    "username": "avocado",
+    "resetToken": "2d8874de-ad8a-42e6-8b2d-4523c6db740a",
+    "resetTokenExpiry": 1745291656997
+  },
+  {
     "id": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
     "isVerified": true,
     "email": "aguscastino01@gmail.com",
