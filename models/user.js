@@ -103,20 +103,22 @@ export class UserModel {
     
     return false;
 }
-  static async getUserFromToken(input){
+  static async getUserFromToken(input) {
     const token = input.token
-    
+    console.log(token)
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        return this.getUserFromUsername(decoded.id)
+      const decoded = jwt.verify(token, JWT_SECRET);
+      console.log(decoded.id)
+      const user = await this.getById(decoded.id);
+      return user
     } catch (error) {
-        console.error('Token inválido:', error.message);
-        return null;
+      console.error('Token inválido:', error.message);
+      return null;
     }
   }
   
   static async getUserFromUsername(userId){
-    const user = users.find(user => user.id.toLowerCase() === userId.toLowerCase());
+    const user = users.find(user => user.id === userId);
     if(!user){
       return false
     }
@@ -160,9 +162,14 @@ export class UserModel {
   }
 
   static async sendVerificationEmail(input) {
-    console.log(input.email)
-    console.log(input.id)
-    const verificationToken = jwt.sign({id: input.id}, JWT_SECRET, {expiresIn: '24h'});
+    const user = await this.getByEmail(input.email)
+    const verificationToken = jwt.sign({id: user.id}, JWT_SECRET, {expiresIn: '24h'});
     sendVerificationEmail(input.email, verificationToken)
+  }
+
+  static verifyUser(user){
+    user.isVerified = true;
+    this.update(user.id, user)
+    return true
   }
 } 

@@ -14,13 +14,6 @@
     "username": "Frtocco1"
   },
   {
-    "id": "9e8c7eb9-aaaa-4c2b-900a-5110d3a4a470",
-    "isVerified": false,
-    "email": "frantocco7@gmail.com",
-    "password": "$2b$10$2Lah3MjVeFxnZKTE8cXTi.QpFZULfQVs./sGgY85LJ4jBYV8HWM5K",
-    "username": "admin21"
-  },
-  {
     "id": "efb79b83-3856-4524-a149-29b3ac4184a0",
     "isVerified": true,
     "email": "frtocco12@gmail.com",
@@ -58,12 +51,10 @@
     "username": "Frtocco212"
   },
   {
-    "id": "3a49758c-3627-4f11-b45e-a76cd8958c60",
-    "isVerified": false,
-    "email": "deremate764@gmail.com",
-    "password": "$2b$10$UjY1PyG1vC9BttuSSgzk5.6xmUzYaxSl2Ui/Cx5WcWAd99bTKjLuK",
-    "username": "admin",
-    "resetToken": "512ae07d-91bf-4790-94d8-0a3f74870d29",
-    "resetTokenExpiry": 1745348903170
+    "id": "0807f038-61aa-4833-90cc-7eb34539832b",
+    "isVerified": true,
+    "email": "frantocco6@gmail.com",
+    "password": "$2b$10$l.5PphncpQMCObjLflYHOevrlJ/nvajqKZ12B9HN/C9r3niOObkEm",
+    "username": "admin5"
   }
 ]

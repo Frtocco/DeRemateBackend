@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { UserModel } from '../models/user.js';
 import { validateUser, validatePartialUser } from '../userSchema.js';
 import { sendResetEmail } from '../mailer.js';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, verify } from 'node:crypto';
 import { readFile, writeFile } from 'fs/promises';
 
 const writeJSON = async (path, data) => {
@@ -86,7 +86,7 @@ userRouter.post('/jwt', async (req, res) => {
   console.log(token);
   try {
     const user = await UserModel.getUserFromToken(token);
-
+    
     if (user) {
       return res.status(200).json(user);
     }
@@ -151,7 +151,6 @@ userRouter.post('/emailVerification', async (req, res) => {
   console.log('pegamos en la verificacion')
   try{
     await UserModel.sendVerificationEmail(req.body);
-    console.log('deberia andar')
     return res.status(200).json({ message: 'Email enviado correctamente' });
   }catch(error){
     console.error(error);
@@ -159,30 +158,33 @@ userRouter.post('/emailVerification', async (req, res) => {
   }
 
 });
-//Verificar al usuario cuando clickea el link enviado
-userRouter.get('/verify/', async (req, res) => {
-  const token = req.query.token;
+userRouter.get('/verify/:token', async (req, res) => {
+  const token = req.params.token;
+
+  console.log("Entramos a /verify/:token con token:", token);
 
   if (!token) {
     return res.status(400).send('Falta el token');
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
-    const userId = decoded.id;
+    const tokenModel = { token };
+    
+    const user = await UserModel.getUserFromToken(tokenModel);
 
-    const user = await UserModel.getById(userId);
     if (!user) {
-      return res.status(404).send('Usuario no encontrado');
+      return res.status(404).json({ message: 'User not found' });
     }
-    user.isVerified = true;
-    await UserModel.updateUser(userId, user);
-    return res.status(200);
-  } catch (error) {
-    console.error(error);
+
+    await UserModel.verifyUser(user);
+
+    return res.status(200).send('Usuario verificado correctamente');
+
+  } catch (err) {
+    console.error("Error al verificar:", err);
     return res.status(400).send('Token inválido o expirado');
   }
-})
+});
 
 
 // Reset password
