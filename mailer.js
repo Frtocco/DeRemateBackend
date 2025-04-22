@@ -26,7 +26,7 @@ export const sendVerificationEmail = async (to, token) => {
 }
 
 export const sendResetEmail = async (to, token) => {
-  const resetLink = `http://localhost:1234/reset-password?token=${token}`
+  const resetLink = `http://localhost:1234/users/reset-password/${token}`
 
   const mailOptions = {
     from: 'deremate764@gmail.com',

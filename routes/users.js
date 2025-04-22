@@ -188,8 +188,11 @@ userRouter.get('/verify/:token', async (req, res) => {
 
 
 // Reset password
-userRouter.post('/reset-password', async (req, res) => {
-  const { token, newPassword } = req.body;
+userRouter.post('/reset-password/:token', async (req, res) => {
+
+  const token = req.params.token;
+
+  /*const { token, newPassword } = req.body;*/
 
   if (!token || !newPassword) {
     return res.status(400).json({ message: 'Token y nueva contraseña requeridos' });
