@@ -56,5 +56,14 @@
     "email": "frantocco@gmail.com",
     "password": "$2b$10$ajekMBRD1Yd113GrshhE7uRzb891RmaNuzm9iOi8YVsQ0sXNmVwyi",
     "username": "Frtocco212"
+  },
+  {
+    "id": "3a49758c-3627-4f11-b45e-a76cd8958c60",
+    "isVerified": false,
+    "email": "deremate764@gmail.com",
+    "password": "$2b$10$UjY1PyG1vC9BttuSSgzk5.6xmUzYaxSl2Ui/Cx5WcWAd99bTKjLuK",
+    "username": "admin",
+    "resetToken": "512ae07d-91bf-4790-94d8-0a3f74870d29",
+    "resetTokenExpiry": 1745348903170
   }
 ]

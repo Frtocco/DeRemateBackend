@@ -4,7 +4,7 @@ export const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'deremate764@gmail.com',
-    pass: 'uadeinformatica'
+    pass: 'qaizvqigmfrolqrd'
   }
 });
 
@@ -26,7 +26,7 @@ export const sendVerificationEmail = async (to, token) => {
 }
 
 export const sendResetEmail = async (to, token) => {
-  const resetLink = `https://29c4-170-239-171-153.ngrok-free.app/reset-password?token=${token}`
+  const resetLink = `http://localhost:1234/reset-password?token=${token}`
 
   const mailOptions = {
     from: 'deremate764@gmail.com',

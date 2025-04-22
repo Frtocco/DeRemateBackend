@@ -171,18 +171,19 @@ userRouter.get('/verify/', async (req, res) => {
     const decoded = jwt.verify(token, JWT_SECRET);
     const userId = decoded.id;
 
-    const user = await getUserById(userId);
+    const user = await UserModel.getById(userId);
     if (!user) {
       return res.status(404).send('Usuario no encontrado');
     }
     user.isVerified = true;
-    await updateUser(userId, user);
+    await UserModel.updateUser(userId, user);
     return res.status(200);
   } catch (error) {
     console.error(error);
     return res.status(400).send('Token inválido o expirado');
   }
 })
+
 
 // Reset password
 userRouter.post('/reset-password', async (req, res) => {
