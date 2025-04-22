@@ -188,11 +188,11 @@ userRouter.get('/verify/:token', async (req, res) => {
 
 
 // Reset password
-userRouter.post('/reset-password/:token', async (req, res) => {
+userRouter.post('/reset-password', async (req, res) => {
 
-  const token = req.params.token;
+  /*const token = req.params.token;*/
 
-  /*const { token, newPassword } = req.body;*/
+  const { token, newPassword } = req.body;
 
   if (!token || !newPassword) {
     return res.status(400).json({ message: 'Token y nueva contraseña requeridos' });
@@ -204,4 +204,26 @@ userRouter.post('/reset-password/:token', async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+});
+
+userRouter.get('/reset-password/:token', (req, res) => {
+  const { token } = req.params;
+
+  if (!token) {
+    return res.status(400).send('El token es requerido para restablecer la contraseña.');
+  }
+
+  res.send(`
+    <html>
+      <body>
+        <h1>Restablecer Contraseña</h1>
+        <form method="POST" action="/users/reset-password">
+          <input type="hidden" name="token" value="${token}" />
+          <label for="newPassword">Nueva contraseña:</label>
+          <input type="password" id="newPassword" name="newPassword" required />
+          <button type="submit">Restablecer</button>
+        </form>
+      </body>
+    </html>
+  `);
 });
