@@ -1,26 +1,28 @@
 import { Router } from 'express'
 import { OrderModel } from '../models/order.js'
+import { authMiddleware } from '../middlewares/auth.js'
 
 export const orderRouter = Router()
 
-orderRouter.get('/', async (req, res) => {
+orderRouter.get('/', authMiddleware, async (req, res) => {
   const orders = await OrderModel.getAll()
   res.json(orders)
 })
 
-orderRouter.get('/pendings', async (req, res) => {
+orderRouter.get('/pendings', authMiddleware, async (req, res) => {
   const pendingOrders = await OrderModel.getPendings()
   res.json(pendingOrders)
 })
 
-orderRouter.get('/history', async (req, res) => {
-  const { riderId } = req.query
-  console.log('Consulta de historial para este rider id: ', riderId)
-  const orders = await OrderModel.getOrdersByRider(riderId)
+orderRouter.get('/history', authMiddleware, async (req, res) => {
+  // Ahora puedes acceder al id del usuario autenticado:
+  const userId = req.user.id
+  console.log('Consulta de historial para este user id: ', userId)
+  const orders = await OrderModel.getOrdersByRider(userId)
   res.json(orders)
 })
 
-orderRouter.put('/:orderId', async (req, res) => {
+orderRouter.put('/:orderId', authMiddleware, async (req, res) => {
   const { orderId } = req.params
   const { status, riderId } = req.body
 

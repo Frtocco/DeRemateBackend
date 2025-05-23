@@ -65,5 +65,12 @@
     "username": "admin",
     "resetToken": "05837249-9674-4b33-ab48-f68a9bb830a8",
     "resetTokenExpiry": 1745357555247
+  },
+  {
+    "id": "a664995c-0022-424b-93b9-6d13421689b3",
+    "isVerified": true,
+    "username": "test1",
+    "email": "correo@gmail.com",
+    "password": "$2b$10$MlV6ojC.w3TY35CXBbwI/ufrfRaBOE4dyEu5IGwPW3VLfXEGEHv9y"
   }
 ]

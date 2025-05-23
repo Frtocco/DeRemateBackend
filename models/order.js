@@ -1,33 +1,31 @@
 import { readJSON, writeJSON } from '../utils.js'
 
 const ORDER_FILE_PATH = './json/order.json'
-let orders = readJSON(ORDER_FILE_PATH)
+const orders = readJSON(ORDER_FILE_PATH)
 
-export class OrderModel{
-    static async getAll(){
-        return orders
-    }
+export class OrderModel {
+  static async getAll () {
+    return orders
+  }
 
-    static async getPendings(){
-        const pendingOrders = orders.filter((order) => order.status == 'Pending');
-        return pendingOrders
-    }
+  static async getPendings () {
+    const pendingOrders = orders.filter((order) => order.status === 'Pending')
+    return pendingOrders
+  }
 
-    static async getOrdersByRider(riderId){
-        const riderOrders = orders.filter((order) => order.riderId == riderId);
-        return riderOrders
-    
-    }
+  static async getOrdersByRider (riderId) {
+    const riderOrders = orders.filter((order) => order.riderId === riderId)
+    return riderOrders
+  }
 
-    static async chengeStatus(orderId, newStatus, riderId){
-        
-        const index = orders.findIndex((order) => order.orderId == orderId);
-        
-        orders[index].status = newStatus;
-        orders[index].riderId = riderId
+  static async chengeStatus (orderId, newStatus, riderId) {
+    const index = orders.findIndex((order) => order.orderId === orderId)
 
-        writeJSON(ORDER_FILE_PATH,orders)
+    orders[index].status = newStatus
+    orders[index].riderId = riderId
 
-        return orders[index] 
-    }
+    writeJSON(ORDER_FILE_PATH, orders)
+
+    return orders[index]
+  }
 }
