@@ -172,4 +172,9 @@ export class UserModel {
     this.update(user.id, user)
     return true
   }
+
+  static async isUserVerified(input){
+    const user = users.find(user => user.username.toLowerCase() === input.username.toLowerCase())
+    return(user.isVerified)
+  }
 }

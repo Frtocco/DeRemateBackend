@@ -110,6 +110,10 @@ userRouter.post('/login', async (req, res) => {
     const authResult = await UserModel.authenticate(req.body)
 
     if (authResult) {
+      if(! await UserModel.isUserVerified(req.body)){
+        console.log("entramos aca")
+        return res.status(403).json({ message: 'Invalid credentials' });
+      }
       return res.status(200).json(authResult)
     }
 
