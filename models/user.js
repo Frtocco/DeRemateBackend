@@ -162,6 +162,7 @@ export class UserModel {
   }
 
   static async sendVerificationEmail (input) {
+    console.log(input.email)
     const user = await this.getByEmail(input.email)
     const verificationToken = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '24h' })
     sendVerificationEmail(input.email, verificationToken)

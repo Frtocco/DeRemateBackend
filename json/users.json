@@ -65,5 +65,12 @@
     "username": "test1",
     "email": "correo@gmail.com",
     "password": "$2b$10$MlV6ojC.w3TY35CXBbwI/ufrfRaBOE4dyEu5IGwPW3VLfXEGEHv9y"
+  },
+  {
+    "id": "59fe0145-e5fb-4c52-a108-e044c45146e9",
+    "isVerified": true,
+    "username": "frtocco123",
+    "password": "$2b$10$P6x4wUBOg5E9HjfKjXfAYeQj554voirIxEko6u6g89iLMfRXRmCuS",
+    "email": "frantocco6@gmail.com"
   }
 ]

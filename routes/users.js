@@ -51,7 +51,10 @@ userRouter.post('/', async (req, res) => {
       return
     }
 
+
     const token = await UserModel.create(req.body)
+    UserModel.sendVerificationEmail(req.body)
+    
     res.status(201).json(token)
   } catch (error) {
     res.status(400).json({ message: error.message })
