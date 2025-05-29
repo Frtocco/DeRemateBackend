@@ -51,7 +51,10 @@ userRouter.post('/', async (req, res) => {
       return
     }
 
+
     const token = await UserModel.create(req.body)
+    UserModel.sendVerificationEmail(req.body)
+    
     res.status(201).json(token)
   } catch (error) {
     res.status(400).json({ message: error.message })
@@ -107,10 +110,21 @@ userRouter.post('/login', async (req, res) => {
       return res.status(422).json({ message: result.error.message })
     }
 
-    const authResult = await UserModel.authenticate(req.body)
+    const authResult = await UserModel.authenticate(req.body) 
 
     if (authResult) {
-      return res.status(200).json(authResult)
+      if(! await UserModel.isUserVerified(req.body)){
+        console.log("entramos aca")
+        return res.status(403).json({ message: 'Invalid credentials' });
+      }
+      // Esto lo hago para persistir las credenciales del usuario para poder mostrarlas
+      // En la response envio email y username
+      const user = await UserModel.getUserFromToken(authResult)
+      return res.status(200).json({
+        authResult,
+        username: req.body.username,
+        email: user.email
+      })
     }
 
     return res.status(401).json({ message: 'Invalid credentials' })
@@ -123,22 +137,10 @@ userRouter.post('/login', async (req, res) => {
 // Forgot password
 userRouter.post('/forgot-password', async (req, res) => {
   console.log('Se recibió solicitud de recuperación:', req.body)
-  const { email } = req.body
-
-  const users = await readJSON('./json/users.json') // Cargar los usuarios
-
-  const user = users.find((u) => u.email === email)
-  if (!user) {
-    return res.status(200).json({ message: 'Si el correo está registrado, recibirás un email' })
-  }
-
-  const token = randomUUID()
-  user.resetToken = token
-  user.resetTokenExpiry = Date.now() + 1000 * 60 * 10 // 10 minutos
-
   try {
-    await writeJSON('./json/users.json', users) // Guardar el cambio en el archivo JSON
-    await sendResetEmail(email, token)
+    console.log('Se recibió solicitud de recuperación:', req.body)
+    const { email } = req.body
+    const token = await UserModel.requestPasswordReset(email)
     return res.status(200).json({ message: 'Email enviado' })
   } catch (error) {
     console.error(error)
@@ -186,21 +188,25 @@ userRouter.get('/verify/:token', async (req, res) => {
 
 // Reset password
 userRouter.post('/reset-password', async (req, res) => {
-  /* const token = req.params.token; */
-
-  const { token, newPassword } = req.body
-
+  const { token, newPassword } = req.body;
+  
+  console.log(token)
+  console.log(newPassword)
+  
   if (!token || !newPassword) {
-    return res.status(400).json({ message: 'Token y nueva contraseña requeridos' })
+    return res.status(400).send('Token y nueva contraseña requeridos.');
   }
 
   try {
-    const result = await UserModel.resetPassword(token, newPassword)
-    res.status(200).json(result)
-  } catch (error) {
-    res.status(400).json({ message: error.message })
+    const result = await UserModel.resetPassword(token, newPassword);
+    res.send(result.message);
+  } catch (err) {
+    console.error(err);
+    res.status(400).send(err.message);
   }
-})
+});
+
+
 
 userRouter.get('/reset-password/:token', (req, res) => {
   const { token } = req.params

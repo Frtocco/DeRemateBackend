@@ -3,8 +3,10 @@ import { userRouter } from './routes/users.js'
 import { orderRouter } from './routes/orders.js'
 import { corsMiddleware } from './middlewares/cors.js'
 
+
 const app = express()
 app.use(corsMiddleware())
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.disable('x-powered-by')
 
