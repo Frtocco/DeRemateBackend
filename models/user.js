@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../utils.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import { sendVerificationEmail } from '../mailer.js'
+import { sendResetEmail, sendVerificationEmail } from '../mailer.js'
 
 const JWT_SECRET = 'clave_secreta'
 
@@ -131,9 +131,9 @@ export class UserModel {
     if (!user) {
       throw new Error('No existe un usuario con ese correo')
     }
-
+    
     const resetToken = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '15m' })
-
+    sendResetEmail(email, resetToken)
     return { resetToken, message: 'Token de recuperación generado con éxito' }
   }
 
@@ -160,6 +160,7 @@ export class UserModel {
   static async getByEmail (email) {
     return users.find(user => user.email === email)
   }
+  
 
   static async sendVerificationEmail (input) {
     console.log(input.email)
