@@ -23,9 +23,12 @@ orderRouter.get('/history', authMiddleware, async (req, res) => {
 })
 
 orderRouter.put('/:orderId', authMiddleware, async (req, res) => {
-  const { orderId } = req.params
-  const { status, riderId } = req.body
-
+  console.log('Entra');
+  
+  const { orderId } = req.params;
+  const riderId = req.user.id
+  const status = req.body.status
+  
   const order = await OrderModel.chengeStatus(orderId, status, riderId)
-  return res.json(order)
+  return res.status(200).json(order)
 })
