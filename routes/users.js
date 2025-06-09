@@ -123,7 +123,8 @@ userRouter.post('/login', async (req, res) => {
       return res.status(200).json({
         authResult,
         username: req.body.username,
-        email: user.email
+        email: user.email,
+        stars:user.stars
       })
     }
 
