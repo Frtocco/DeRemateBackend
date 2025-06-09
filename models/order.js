@@ -13,8 +13,15 @@ export class OrderModel {
     return pendingOrders
   }
 
-  static async getOrdersByRider (riderId) {
-    const riderOrders = orders.filter((order) => order.riderId === riderId)
+  static async getOrdersByRider (riderId, statusFilter = null) {
+
+    let riderOrders
+
+    if(statusFilter){
+      riderOrders = orders.filter((order) => order.riderId === riderId && order.status == statusFilter)
+    }else{      
+      riderOrders = orders.filter((order) => order.riderId === riderId)
+    }
     return riderOrders
   }
 
