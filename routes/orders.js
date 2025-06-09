@@ -15,10 +15,11 @@ orderRouter.get('/pendings', authMiddleware, async (req, res) => {
 })
 
 orderRouter.get('/history', authMiddleware, async (req, res) => {
-  // Ahora puedes acceder al id del usuario autenticado:
   const userId = req.user.id
+  const { status } = req.query;
+
   console.log('Consulta de historial para este user id: ', userId)
-  const orders = await OrderModel.getOrdersByRider(userId)
+  const orders = await OrderModel.getOrdersByRider(userId, status)
   res.json(orders)
 })
 
