@@ -30,13 +30,6 @@
     "resetTokenExpiry": 1745291656997
   },
   {
-    "id": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
-    "isVerified": true,
-    "email": "aguscastino01@gmail.com",
-    "password": "$2b$10$lOhwrCM9LplCxuaTERhi8OP.Qw7YLOMNq52pIYppVUjIflTXhq1P6",
-    "username": "agus"
-  },
-  {
     "id": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
     "isVerified": true,
     "email": "pedro@gmail.com",
@@ -72,5 +65,13 @@
     "username": "frtocco123",
     "password": "$2b$10$fuqpwQFm68QJPfuDhgHN.O4kop0o/SoecAb.roJ0P.c5JgEzNHtW2",
     "email": "frantocco6@gmail.com"
+  },
+  {
+    "id": "86be179f-30c0-41b6-af38-6b67e823193c",
+    "isVerified": true,
+    "username": "agus",
+    "password": "$2b$10$ZMCDX6PASM04tJk901w23.IKazlXzjKu1v/VZqoMiulI7zB11dYEa",
+    "email": "aguscastino01@gmail.com",
+    "stars":4.5
   }
 ]
