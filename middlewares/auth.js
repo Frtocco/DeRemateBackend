@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-const JWT_SECRET = 'clave_secreta' // Usa la misma clave que en UserModel
+const JWT_SECRET = 'clave_secreta'
 
 export function authMiddleware (req, res, next) {
   const authHeader = req.headers.authorization
@@ -10,7 +10,7 @@ export function authMiddleware (req, res, next) {
   const token = authHeader.split(' ')[1]
   try {
     const decoded = jwt.verify(token, JWT_SECRET)
-    req.user = decoded // Aquí tendrás el id y username del usuario
+    req.user = decoded // Generar el nombre de usuario a partir del token
     next()
   } catch (err) {
     return res.status(401).json({ message: 'Invalid token' })
