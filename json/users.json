@@ -65,5 +65,12 @@
     "username": "admin",
     "resetToken": "05837249-9674-4b33-ab48-f68a9bb830a8",
     "resetTokenExpiry": 1745357555247
+  },
+  {
+    "id": "9d23370e-42d4-4be6-a7c1-cacdc89fed67",
+    "isVerified": true,
+    "email": "sbdjks@gmail.com",
+    "password": "$2b$10$FBkr8eH3yzVtv5kkZcxv1OmsSZaSV.2s4SjpqbC9jUq7NroLiDIIK",
+    "username": "pedro2"
   }
 ]
