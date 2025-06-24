@@ -1,0 +1,22 @@
+[{
+    "orderId": "16",
+    "coment": "El paquete llegó dañado.",
+    "comentPunt": 2,
+    "imgLink":"https://previews.123rf.com/images/goritza/goritza1611/goritza161100313/65694790-damaged-package-with-a-fragile-handle-with-care-sign-isolated-on-white-background-3d-illustration.jpg"
+  },
+{
+    "orderId": "28",
+    "coment": "El repartidor no fue amable",
+    "comentPunt": "1"
+  },
+{
+    "orderId": "27",
+    "coment": "El paquete llego dañado",
+    "comentPunt": "4",
+    "imgLink":"https://previews.123rf.com/images/goritza/goritza1611/goritza161100313/65694790-damaged-package-with-a-fragile-handle-with-care-sign-isolated-on-white-background-3d-illustration.jpg"
+  },
+{
+    "orderId": "19",
+    "coment": "Entrega rápida y sin problemas.",
+    "comentPunt": 5
+  }]

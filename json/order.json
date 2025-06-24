@@ -3,219 +3,162 @@
     "orderId": "1",
     "riderId": "7c617efe-cc81-4ae4-9dd6-a51c22cdb9c4",
     "status": "Completed",
-    "address": "742 Evergreen Terrace",
-    "coment": "Paquete llegó perfecto.",
-    "comentPunt": 5
+    "address": "742 Evergreen Terrace"
   },
   {
     "orderId": "2",
     "riderId": "7c617efe-cc81-4ae4-9dd6-a51c22cdb9c4",
     "status": "In Progress",
-    "address": "Springfield Mall",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Springfield Mall"
   },
   {
     "orderId": "3",
     "riderId": "364b34b5-73cb-484f-a375-e4ca56d4d6ea",
     "status": "Completed",
-    "address": "31 Spooner Street",
-    "coment": "El repartidor fue muy amable.",
-    "comentPunt": 5
+    "address": "31 Spooner Street"
   },
   {
     "orderId": "4",
     "riderId": "364b34b5-73cb-484f-a375-e4ca56d4d6ea",
     "status": "Cancelled",
-    "address": "New New York",
-    "coment": "",
-    "comentPunt": ""
+    "address": "New New York"
   },
   {
     "orderId": "5",
     "riderId": "364b34b5-73cb-484f-a375-e4ca56d4d6ea",
     "status": "In Progress",
-    "address": "Planet Express HQ",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Planet Express HQ"
   },
   {
     "orderId": "6",
     "riderId": "9e8c7eb9-aaaa-4c2b-900a-5110d3a4a470",
     "status": "In Progress",
-    "address": "124 Conch Street",
-    "coment": "",
-    "comentPunt": ""
+    "address": "124 Conch Street"
   },
   {
     "orderId": "7",
     "riderId": "9e8c7eb9-aaaa-4c2b-900a-5110d3a4a470",
     "status": "Completed",
-    "address": "Rock Bottom",
-    "coment": "El paquete llegó con retraso.",
-    "comentPunt": 3
+    "address": "Rock Bottom"
   },
   {
     "orderId": "8",
     "riderId": "9e8c7eb9-aaaa-4c2b-900a-5110d3a4a470",
     "status": "In Progress",
-    "address": "Bikini Bottom Market",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Bikini Bottom Market"
   },
   {
     "orderId": "9",
     "riderId": "efb79b83-3856-4524-a149-29b3ac4184a0",
     "status": "Cancelled",
-    "address": "1600 Pennsylvania Avenue NW",
-    "coment": "",
-    "comentPunt": ""
+    "address": "1600 Pennsylvania Avenue NW"
   },
   {
     "orderId": "10",
     "riderId": "efb79b83-3856-4524-a149-29b3ac4184a0",
     "status": "Completed",
-    "address": "White House Gift Shop",
-    "coment": "Buena atención, todo correcto.",
-    "comentPunt": 4
+    "address": "White House Gift Shop"
   },
   {
     "orderId": "11",
     "riderId": "efb79b83-3856-4524-a149-29b3ac4184a0",
     "status": "In Progress",
-    "address": "Lincoln Memorial",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Lincoln Memorial"
   },
   {
     "orderId": "12",
     "riderId": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
     "status": "Completed",
-    "address": "221B Baker Street",
-    "coment": "Paquete entregado en buen estado.",
-    "comentPunt": 5
+    "address": "221B Baker Street"
   },
   {
     "orderId": "13",
     "riderId": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
     "status": "In Progress",
-    "address": "Westminster Abbey",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Westminster Abbey"
   },
   {
     "orderId": "14",
     "riderId": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
     "status": "In Progress",
-    "address": "Tower of London",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Tower of London"
   },
   {
     "orderId": "15",
     "riderId": "67bd13d1-ee9b-4780-b4a5-486bcc871753",
     "status": "Cancelled",
-    "address": "London Eye",
-    "coment": "",
-    "comentPunt": ""
+    "address": "London Eye"
   },
   {
     "orderId": "16",
     "riderId": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
     "status": "Completed",
-    "address": "12 Grimmauld Place",
-    "coment": "El paquete llegó dañado.",
-    "comentPunt": 2,
-    "imgLink":"https://previews.123rf.com/images/goritza/goritza1611/goritza161100313/65694790-damaged-package-with-a-fragile-handle-with-care-sign-isolated-on-white-background-3d-illustration.jpg"
-  },
+    "address": "12 Grimmauld Place"
+    },
   {
     "orderId": "17",
     "riderId": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
     "status": "Cancelled",
-    "address": "The Burrow",
-    "coment": "",
-    "comentPunt": ""
+    "address": "The Burrow"
   },
   {
     "orderId": "18",
     "riderId": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
     "status": "In Progress",
-    "address": "Hogsmeade",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Hogsmeade"
+    
   },
   {
     "orderId": "19",
     "riderId": "c7501d98-ef08-47ec-8e59-c4e9ae110eda",
     "status": "Completed",
-    "address": "Hogwarts Castle",
-    "coment": "Entrega rápida y sin problemas.",
-    "comentPunt": 5
+    "address": "Hogwarts Castle"
   },
   {
     "orderId": "20",
     "status": "Pending",
-    "address": "88 Miles Avenue",
-    "coment": "",
-    "comentPunt": ""
+    "address": "88 Miles Avenue"
   },
   {
     "orderId": "21",
     "status": "Pending",
-    "address": "5th Avenue & E 57th St",
-    "coment": "",
-    "comentPunt": ""
+    "address": "5th Avenue & E 57th St"
   },
   {
     "orderId": "22",
     "status": "Pending",
-    "address": "The Shire, Middle Earth",
-    "coment": "",
-    "comentPunt": ""
+    "address": "The Shire, Middle Earth"
   },
   {
     "orderId": "23",
     "status": "Pending",
-    "address": "Winterfell, North of the Wall",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Winterfell, North of the Wall"
   },
   {
     "orderId": "24",
     "status": "Pending",
-    "address": "Diagon Alley, London",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Diagon Alley, London"
   },
   {
     "orderId": "25",
     "status": "Pending",
-    "address": "Wall Street, NY",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Wall Street, NY"
   },
   {
     "orderId": "26",
     "status": "Pending",
-    "address": "Bakerloo Line, London Underground",
-    "coment": "",
-    "comentPunt": ""
+    "address": "Bakerloo Line, London Underground"
   },
   {
     "orderId": "27",
     "riderId": "9d23370e-42d4-4be6-a7c1-cacdc89fed67",
     "status": "Completed",
-    "address": "Wall Street, NY",
-    "coment": "El paquete llego dañado",
-    "comentPunt": "4",
-    "imgLink":"https://previews.123rf.com/images/goritza/goritza1611/goritza161100313/65694790-damaged-package-with-a-fragile-handle-with-care-sign-isolated-on-white-background-3d-illustration.jpg"
+    "address": "Wall Street, NY"
   },
   {
     "orderId": "28",
     "riderId": "9d23370e-42d4-4be6-a7c1-cacdc89fed67",
     "status": "Completed",
-    "address": "Wall Street, NY",
-    "coment": "El repartidor no fue amable",
-    "comentPunt": "1"
+    "address": "Wall Street, NY"
   }
 ]
