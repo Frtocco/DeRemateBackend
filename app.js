@@ -12,6 +12,7 @@ app.disable('x-powered-by')
 
 app.use('/users', userRouter)
 app.use('/orders', orderRouter)
+app.use('/qr', qrRouter)
 
 const PORT = process.env.PORT ?? 1234
 
@@ -19,4 +20,3 @@ app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`)
 })
 
-app.use('/qr', qrRouter)
