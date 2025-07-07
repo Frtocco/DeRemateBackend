@@ -33,7 +33,15 @@ export class OrderModel {
     const index = orders.findIndex((order) => order.orderId === orderId)
 
     orders[index].status = newStatus
-    orders[index].riderId = riderId
+    
+    if(newStatus == 'In Progress'){
+      let confirmationCode = Math.floor(1000 + Math.random() * 9000);
+      orders[index] = {
+        ...orders[index],
+        riderId: riderId,
+        confirmationCode: confirmationCode
+      }
+    }
 
     writeJSON(ORDER_FILE_PATH, orders)
 
