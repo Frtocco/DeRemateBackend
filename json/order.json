@@ -237,8 +237,17 @@
     "orderId": "31",
     "riderId": "a664995c-0022-424b-93b9-6d13421689b3",
     "status": "In Progress",
+    "address": "-34.644333,-58.348452",
+    "depositLocation": "Gondola: D, Fila: 5",
+    "addressDesc": "Av. Caseros 2200, Parque Patricios"
+  },
+  {
+    "orderId": "32",
+    "riderId": "59fe0145-e5fb-4c52-a108-e044c45146e9",
+    "status": "Pending",
     "address": "-34.629536,-58.434946",
     "depositLocation": "Gondola: E, Fila: 1",
     "addressDesc": "Av. Juan B. Justo 2700, Palermo"
   }
+  
 ]
