@@ -9,6 +9,13 @@ orderRouter.get('/', authMiddleware, async (req, res) => {
   res.json(orders)
 })
 
+orderRouter.get('/byId/:id', authMiddleware, async (req, res) => {
+  const { id } = req.params
+  const order = await OrderModel.getOrderById(id)
+  console.log(order)
+  res.json(order)
+})
+
 orderRouter.get('/pendings', authMiddleware, async (req, res) => {
   const pendingOrders = await OrderModel.getPendings()
   res.json(pendingOrders)
@@ -16,9 +23,7 @@ orderRouter.get('/pendings', authMiddleware, async (req, res) => {
 
 orderRouter.get('/history', authMiddleware, async (req, res) => {
   const userId = req.user.id
-  const { status } = req.query;
-
-  console.log('Consulta de historial para este user id: ', userId)
+  const { status } = req.query
   const orders = await OrderModel.getOrdersByRider(userId, status)
   res.json(orders)
 })

@@ -13,13 +13,17 @@ export class OrderModel {
     return pendingOrders
   }
 
-  static async getOrdersByRider (riderId, statusFilter = null) {
+  static async getOrderById (orderId) {
+    const resp = orders.filter((order) => order.orderId === orderId)
+    return resp[0]
+  }
 
+  static async getOrdersByRider (riderId, statusFilter = null) {
     let riderOrders
 
-    if(statusFilter){
+    if (statusFilter) {
       riderOrders = orders.filter((order) => order.riderId === riderId && order.status == statusFilter)
-    }else{      
+    } else {
       riderOrders = orders.filter((order) => order.riderId === riderId)
     }
     return riderOrders
@@ -29,7 +33,15 @@ export class OrderModel {
     const index = orders.findIndex((order) => order.orderId === orderId)
 
     orders[index].status = newStatus
-    orders[index].riderId = riderId
+    
+    if(newStatus == 'In Progress'){
+      let confirmationCode = Math.floor(1000 + Math.random() * 9000);
+      orders[index] = {
+        ...orders[index],
+        riderId: riderId,
+        confirmationCode: confirmationCode
+      }
+    }
 
     writeJSON(ORDER_FILE_PATH, orders)
 
